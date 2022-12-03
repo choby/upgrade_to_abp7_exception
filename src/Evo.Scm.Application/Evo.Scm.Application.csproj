@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>Evo.Scm</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>..\Evo.Scm.HttpApi.Host\Notes\EvoApplication.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>$(NoWarn);CS1591;CS8632;</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Evo.Scm.Domain\Evo.Scm.Domain.csproj" />
+		<ProjectReference Include="..\Evo.Scm.Application.Contracts\Evo.Scm.Application.Contracts.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Masuit.Tools.AspNetCore" Version="1.1.8.1" />
+		<PackageReference Include="Masuit.Tools.Core" Version="2.5.8.1" />
+		<PackageReference Include="Sentry" Version="3.24.0" />
+		<PackageReference Include="Volo.Abp.BlobStoring" Version="7.0.0-rc.2" />
+		<PackageReference Include="Volo.Abp.BlobStoring.Aliyun" Version="7.0.0-rc.2" />
+		<PackageReference Include="Volo.Abp.Core" Version="7.0.0-rc.2" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="7.0.0-rc.2" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Application" Version="7.0.0-rc.2" />
+	</ItemGroup>
+
+</Project>
